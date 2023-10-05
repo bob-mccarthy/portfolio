@@ -1,0 +1,403 @@
+:root{
+
+
+  --primary-background-color: #000021;
+  --secondary-background-color: #4a4b4b;
+  --primary-highlight-color: #FFFFFF;
+  --secondary-highlight-color: #ff3d5e;
+}
+
+*{
+  font-family: Futura,Trebuchet MS,Arial,sans-serif; 
+  color: var(--primary-highlight-color)
+}
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--primary-background-color);
+}
+
+h1 {
+  font-size: 32;
+  font-weight: 500;
+  
+}
+
+/* Add a black background color to the top navigation */
+.topnav {
+  background-color: var(--primary-background-color);
+  width: 100vw;
+  overflow: hidden;
+}
+
+.photo {
+  width: 32px;
+  height: 32px;
+  border-radius: 16px;
+  background-color: white;
+  color: white
+}
+
+/* Style the links inside the navigation bar */
+.topnav .link{
+  float: left;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--primary-highlight-color);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+/* Change the color of links on hover */
+.topnav .link:hover {
+  color: var(--secondary-highlight-color);
+}
+
+
+/* Hide the link that should open and close the topnav on small screens */
+.topnav .icon {
+  display: none;
+}
+
+/* When the screen is less than 500 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
+@media screen and (max-width: 500px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav .icon {
+    float: right;
+    display: block;
+    margin: 15px;
+  }
+}
+
+/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
+@media screen and (max-width: 500px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+
+
+@media screen and (max-width: 500px){
+  .project-container {
+    width: 315px;
+  }
+  .project-card{
+    width:150;
+    height:300;
+  }
+  
+}
+
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  z-index: 2;
+  width: 100vw;
+}
+
+.align-center {
+  display: flex;
+  justify-content: center;
+}
+
+.carousel-container {
+  position: relative;
+  display: flex;
+  width: 1000px;
+  min-width: 1000px;
+  height: 600px;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.button-carousel-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  /* align-items: center; */
+  width: 300px;
+  height: 500px;
+  background-color: var(--primary-background-color);
+  font-size: 14px;
+  text-align: center;
+}
+
+.card-img-container {
+  height: 70%;
+  width: 100%;
+  margin: 5px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.card-img{
+  height: 100%;
+}
+
+.photo-container {
+  display:flex;
+  justify-content: center;
+  align-content: center;
+  overflow: hidden;
+  height:500px;
+  width: 500px;
+}
+
+.text-container {
+  margin: 10px;
+  font-size: 30px;
+  max-height: 500px;
+  overflow: hidden;
+}
+
+.header {
+  font-size: 70px;
+  padding: 0;
+  margin: 0;
+}
+
+.photo-text-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+@media screen and (max-width: 1100px){
+  .text-container {
+    font-size: 24px;
+  }
+  .photo-container{
+    height: 400px;
+    width: 400px;
+  }
+  
+}
+
+@media screen and (max-width: 800px){
+  .photo-text-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* @media screen and (max-width: 500px){
+  .photo-text-container {
+    grid-template-columns: 1fr;
+  }
+
+
+} */
+
+
+.carousel-button {
+  border: solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background-color: var(--secondary-background-color);
+  opacity: 100%;
+}
+
+.carousel-mask {
+  width: 100%;
+  overflow: hidden;
+}
+
+.right {
+  right: 0;
+}
+
+.left {
+  left: 0;
+}
+
+.main-heading {
+  font-size: 100px;
+  padding-left: 10px;
+  /* position: absolute; */
+}
+
+.sub-heading{
+  font-size:50px;
+  padding-left: 10px;
+}
+
+.main-heading-container {
+  position: relative;
+  width: 100vw;
+  height: 130px;
+  display: flex;
+  align-items: center;
+}
+
+.aligned-side {
+  position: absolute;
+  top: -4px;
+  left: 630px;
+}
+
+
+
+.heading-text-mask {
+  overflow: hidden;
+}
+
+.hero-page {
+  display: flex;
+  align-items: center;
+  height: 50vh;
+  justify-content: center;
+  
+}
+
+.hero-page-text{
+  display: block;
+  width: min(1500px, 100vw);
+}
+
+.hero-section{
+  width: min(1500px, 100vw);
+}
+
+@media screen and (max-width: 900px){
+  .main-heading {
+    font-size: 50px;
+  }
+  .main-heading-container {
+    height: 80px;
+  }
+  .aligned-side{
+    top: 5px;
+    left: 320px;
+  }
+  .hero-page{
+    height: 35vh;
+  }
+  .sub-heading{
+    font-size: 30px;
+  }
+}
+
+@media screen and (max-width: 500px){
+  .main-heading {
+    font-size: 40px;
+  }
+  .main-heading-container {
+    height: 60px;
+  }
+  .aligned-side{
+    top: 3px;
+    left: 250px;
+  }
+  .hero-page{
+    height: 22vh;
+  }
+  .sub-heading{
+    font-size: 20px;
+  }
+}
+
+.home-page{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.carousel-background {
+  overflow:hidden;
+  position: relative;
+  width: min(1500px, 100vw);
+  
+}
+.carousel-background-img {
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+  position: absolute;
+  z-index: 0;
+  top:-500%;
+  left:-300% ;
+  width:15000px;
+}
+
+.project-text-container {
+  width: min(100vw, 800px); 
+}
+
+.grid-container {
+  display: flex;
+  flex-direction: column;
+  /* flex-wrap: wrap; */
+}
+
+.grid-item {
+  flex: 1;
+  /* min-width: 100px; Adjust the minimum width as needed */
+  margin: 5px;
+  /* padding: 10px; */
+  /* border: 1px solid #ccc; */
+  /* box-sizing: border-box; */
+}
+
+.header-img {
+  width: min(1000px, 96vw);
+}
+
+.standard-img{
+  width: min(800px, 90vw);
+}
+.half-standard-img{
+  width: min(400px, 45vw);
+}
+.third-standard-img{
+  width: min(270px, 30vw);
+}
+
+.project-header{
+  font-size: 60px;
+  text-align: center;
+}
+
+.smaller-project-header{
+  font-size:40px;
+  text-align: center;
+}
+
+@media screen and (max-width: 1150px){
+  .project-header {
+    font-size: 45px;
+  }
+  
+}
+
+@media screen and (max-width: 850px){
+  .project-header {
+    font-size: 30px;
+  }  
+}
+
+.housing-day{
+  margin-top:-30px;
+  width: 80vw;
+  height: 500px;
+}
+
