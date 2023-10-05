@@ -1,3 +1,3 @@
 # Bobby's Portfolio
 
-This is just my simple portfolio to display the different projects I'm working ons
+This is just a simple portfolio to display the different projects I'm working on
