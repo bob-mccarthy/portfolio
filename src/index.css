@@ -301,14 +301,14 @@ h1 {
 
 @media screen and (max-width: 500px){
   .main-heading {
-    font-size: 40px;
+    font-size: 37px;
   }
   .main-heading-container {
     height: 60px;
   }
   .aligned-side{
-    top: 3px;
-    left: 250px;
+    top: 5px;
+    left: 235px;
   }
   .hero-page{
     height: 22vh;
