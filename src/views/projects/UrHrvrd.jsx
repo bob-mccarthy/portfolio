@@ -1,8 +1,8 @@
 import React from 'react'
-import titleImage from '../../assets/Ur.Hrvrd-interface.png'
-import labelGif from '../../assets/labels.gif'
-import scheduleGif from '../../assets/input-schedule.gif'
-import addingClassesGif from '../../assets/add-classes.gif'
+import titleImage from '/static/course-interface.png'
+import labelGif from '/static/labels.gif'
+import scheduleGif from '/static/input-schedule.gif'
+import addingClassesGif from '/static/add-classes.gif'
 
 import { LazyLoadImage } from "react-lazy-load-image-component";
 

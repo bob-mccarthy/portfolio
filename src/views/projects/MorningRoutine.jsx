@@ -1,10 +1,9 @@
 import React from 'react'
-import phoneJailDemo from '../../assets/phone-jail-demo.gif'
-
-import phoneJail from '../../assets/phone-jail.PNG'
-import checkpoint from '../../assets/checkpoint.png'
-import alarmClockFront from '../../assets/alarm-clock-front.png'
-import alarmClockSet from '../../assets/alarm-clock-set.png'
+import phoneJailDemo from '/static/phone-jail-demo.gif'
+import phoneJail from '/static/phone-jail.PNG'
+import checkpoint from '/static/checkpoint.PNG'
+import alarmClockFront from '/static/alarm-clock-front.PNG'
+import alarmClockSet from '/static/alarm-clock-set.PNG'
 
 import { LazyLoadImage } from "react-lazy-load-image-component";
 

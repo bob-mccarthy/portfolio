@@ -1,5 +1,5 @@
 import React from 'react'
-import gradPic from '../assets/graduation-pic.jpeg'
+import gradPic from '/static/graduation-pic.jpeg'
 
 
 const About = () => {

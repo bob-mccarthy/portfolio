@@ -1,14 +1,13 @@
 import React from 'react'
-import cameraInterfaceFront from '../../assets/camera-interface-front.jpg'
-import cameraInterfaceEdit from '../../assets/camera-interface-edit.jpg'
-import cameraInterfaceTimeline from '../../assets/camera-interface-timeline.jpg'
-import cameraInterfaceKeypad from '../../assets/camera-interface-keypad.jpg'
-import cameraSliderHeaderGif from '../../assets/camera-slider.gif'
-import cameraSliderTest from '../../assets/camera-slider-test.gif'
-import cameraSliderTestLQ from '../../assets/low_qual/camera-slider-test.png'
-import esp32 from '../../assets/esp32.jpeg'
-import nema17 from '../../assets/nema17.jpeg'
-import motorDriver from '../../assets/a4988.jpeg'
+import cameraInterfaceFront from '/static/camera-interface-front.jpg'
+import cameraInterfaceEdit from '/static/camera-interface-edit.jpg'
+import cameraInterfaceTimeline from '/static/camera-interface-timeline.jpg'
+import cameraInterfaceKeypad from '/static/camera-interface-keypad.jpg'
+import cameraSliderHeaderGif from '/static/camera-slider.gif'
+import cameraSliderTest from '/static/camera-slider-test.gif'
+import esp32 from '/static/esp32.jpeg'
+import nema17 from '/static/nema17.jpeg'
+import motorDriver from '/static/a4988.jpeg'
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
 

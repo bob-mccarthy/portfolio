@@ -1,9 +1,9 @@
 import Reac, {useEffect, useState, useReducer} from 'react'
 import Carousel from '../components/Carousel'
 import {motion, AnimatePresence} from 'framer-motion'
-import ur_hrvrd_thumbnail from '../assets/Ur.Hrvrd-Interface.png'
-import cameraSlider from '../assets/camera-slider.jpg'
-import morningRoutine from '../assets/morning-routine-robot.jpg'
+import ur_hrvrd_thumbnail from '/static/course-interface.png'
+import cameraSlider from '/static/camera-slider.jpg'
+import morningRoutine from '/static/morning-routine-robot.jpg'
 
 
 const Home = () => {
