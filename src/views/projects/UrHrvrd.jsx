@@ -1,8 +1,8 @@
 import React from 'react'
 import titleImage from '/static/course-interface.png'
-import labelGif from '/static/labels.gif'
-import scheduleGif from '/static/input-schedule.gif'
-import addingClassesGif from '/static/add-classes.gif'
+import labelVid from '/static/labels.mov'
+import scheduleVid from '/static/input-schedule.mov'
+import addingClassesVid from '/static/add-classes.mov'
 
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
@@ -38,14 +38,10 @@ const UrHrvrd = () => {
             </p>
         </div>
       </div>
-      
       <div className='grid-item align-center'>
-        <LazyLoadImage 
-          src={scheduleGif}
-          className = "standard-img"
-          alt="Image Alt"
-        />
-        {/* <img className = "standard-img" src = {scheduleGif} ></img> */}
+        <video className='standard-img' autoPlay loop muted>
+            <source src={scheduleVid} type='video/mp4'/>
+        </video>
       </div>
 
       <div className='grid-item align-center'>
@@ -67,14 +63,10 @@ const UrHrvrd = () => {
         </div>
       </div>
 
-    
       <div className='grid-item align-center'>
-        <LazyLoadImage 
-            src={addingClassesGif}
-            className = "standard-img"
-            alt="Image Alt"
-          />
-        {/* <img className = "standard-img" src = {addingClassesGif} ></img> */}
+        <video className='standard-img' autoPlay loop muted>
+            <source src={addingClassesVid} type='video/mp4'/>
+        </video>
       </div>
       <div className='grid-item align-center'>
         <div className='project-text-container'>
@@ -93,14 +85,10 @@ const UrHrvrd = () => {
           </p>
         </div>
       </div>
-
       <div className='grid-item align-center'>
-        <LazyLoadImage 
-              src={labelGif}
-              className = "standard-img"
-              alt="Image Alt"
-            />
-        {/* <img className = "standard-img" src = {labelGif} ></img> */}
+        <video className='standard-img' autoPlay loop muted>
+            <source src={labelVid} type='video/mp4'/>
+        </video>
       </div>
 
       <div className='grid-item align-center'>

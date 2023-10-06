@@ -4,6 +4,6 @@ import image from '@rollup/plugin-image';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  assetsInclude: ['**/*.PNG','**/*.png'],
+  assetsInclude: ['**/*.PNG','**/*.png','**/*.MOV', '**/*.mov' ],
   plugins: [react(), image()],
 })

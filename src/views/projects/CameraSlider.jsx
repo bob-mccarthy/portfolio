@@ -3,8 +3,8 @@ import cameraInterfaceFront from '/static/camera-interface-front.jpg'
 import cameraInterfaceEdit from '/static/camera-interface-edit.jpg'
 import cameraInterfaceTimeline from '/static/camera-interface-timeline.jpg'
 import cameraInterfaceKeypad from '/static/camera-interface-keypad.jpg'
-import cameraSliderHeaderGif from '/static/camera-slider.gif'
-import cameraSliderTest from '/static/camera-slider-test.gif'
+import cameraSliderHeader from '/static/camera-slider.mov'
+import cameraSliderDemo from '/static/camera-slider-demo.mov'
 import esp32 from '/static/esp32.jpeg'
 import nema17 from '/static/nema17.jpeg'
 import motorDriver from '/static/a4988.jpeg'
@@ -18,17 +18,9 @@ const CameraSlider = () => {
         <h1 className='project-header'>Making my Own Camera Slider</h1>
       </div>
       <div className='grid-item align-center'>
-      {/* <LazyLoadImage 
-        src={cameraSliderHeaderPic}
-        width = "400"
-        alt="Image Alt"
-      /> */}
-      <LazyLoadImage 
-        src={cameraSliderHeaderGif}
-        width = "400"
-        alt="Image Alt"
-      />
-        {/* <img className = "header-img" src = {titleImage} ></img> */}
+        <video width = '400' autoPlay loop muted>
+            <source src={cameraSliderHeader} type='video/mp4'/>
+        </video>
       </div>
       <div className='grid-item align-center'>
         <div className='project-text-container'>
@@ -41,14 +33,10 @@ const CameraSlider = () => {
             <h3>Example Video Using the Camera Slider: </h3>
         </div>
       </div>
-         
       <div className='grid-item align-center'>
-      <LazyLoadImage 
-        src={cameraSliderTest}
-        className = "standard-img"
-        alt="Image Alt"
-      />
-        {/* <img className = "standard-img" src = {cameraSliderTest} ></img> */}
+        <video className='standard-img' autoPlay loop muted>
+            <source src={cameraSliderDemo} type='video/mp4'/>
+        </video>
       </div>
 
       <div className='grid-item align-center'>

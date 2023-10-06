@@ -1,11 +1,11 @@
 import React from 'react'
-import phoneJailDemo from '/static/phone-jail-demo.gif'
 import phoneJail from '/static/phone-jail.PNG'
 import checkpoint from '/static/checkpoint.PNG'
 import alarmClockFront from '/static/alarm-clock-front.PNG'
 import alarmClockSet from '/static/alarm-clock-set.PNG'
+import phoneJailDemoVid from '/static/phone-jail-demo.mov'
 
-import { LazyLoadImage } from "react-lazy-load-image-component";
+import { LazyLoadImage, LazyLoadComponent } from "react-lazy-load-image-component";
 
 const MorningRoutine = () => {
   return (
@@ -13,13 +13,14 @@ const MorningRoutine = () => {
       <div className='grid-item align-center'>
         <h1 className='project-header'>A Robot That Makes Me Do my Morning Routine</h1>
       </div>
+      
       <div className='grid-item align-center'>
-      <LazyLoadImage 
-        src={phoneJailDemo}
-        className='header-img'
-        alt="Image Alt"
-      />
+        <video className='header-img' autoPlay loop muted>
+            <source src={phoneJailDemoVid} type='video/mp4'/>
+        </video>
       </div>
+      
+
       <div className='grid-item align-center'>
         <div className='project-text-container'>
           <h3>TL;DR:</h3>
