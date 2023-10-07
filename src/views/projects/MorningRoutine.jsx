@@ -15,7 +15,7 @@ const MorningRoutine = () => {
       </div>
       
       <div className='grid-item align-center'>
-        <video className='header-img' autoPlay loop muted>
+        <video className='header-img' autoPlay loop muted webkit-playsinline playsinline>
             <source src={phoneJailDemoVid} type='video/mp4'/>
         </video>
       </div>

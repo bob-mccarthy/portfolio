@@ -18,7 +18,7 @@ const CameraSlider = () => {
         <h1 className='project-header'>Making my Own Camera Slider</h1>
       </div>
       <div className='grid-item align-center'>
-        <video width = '400' autoPlay loop muted>
+        <video width = '400' autoPlay loop muted webkit-playsinline playsinline>
             <source src={cameraSliderHeader} type='video/mp4'/>
         </video>
       </div>
@@ -34,7 +34,7 @@ const CameraSlider = () => {
         </div>
       </div>
       <div className='grid-item align-center'>
-        <video className='standard-img' autoPlay loop muted>
+        <video className='standard-img' autoPlay loop muted webkit-playsinline playsinline>
             <source src={cameraSliderDemo} type='video/mp4'/>
         </video>
       </div>
