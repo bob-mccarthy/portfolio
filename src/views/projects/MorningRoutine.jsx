@@ -4,6 +4,7 @@ import checkpoint from '/static/checkpoint.PNG'
 import alarmClockFront from '/static/alarm-clock-front.PNG'
 import alarmClockSet from '/static/alarm-clock-set.PNG'
 import phoneJailDemoVid from '/static/phone-jail-demo.mov'
+import phoneJailDemoGif from '/static/phone-jail-demo.gif'
 
 import { LazyLoadImage, LazyLoadComponent } from "react-lazy-load-image-component";
 
@@ -13,11 +14,13 @@ const MorningRoutine = () => {
       <div className='grid-item align-center'>
         <h1 className='project-header'>A Robot That Makes Me Do my Morning Routine</h1>
       </div>
-      
+
       <div className='grid-item align-center'>
-        <video className='header-img' autoPlay loop muted webkit-playsinline playsinline>
-            <source src={phoneJailDemoVid} type='video/mp4'/>
-        </video>
+        <LazyLoadImage 
+          src={phoneJailDemoGif}
+          className = "header-img"
+          alt="Image Alt"
+        />
       </div>
       
 

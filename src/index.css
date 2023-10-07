@@ -23,6 +23,14 @@ h1 {
   
 }
 
+video::-webkit-media-controls-volume-slider {
+  display:none;
+}
+
+video::-webkit-media-controls-mute-button {
+  display:none;
+}
+
 /* Add a black background color to the top navigation */
 .topnav {
   background-color: var(--primary-background-color);

@@ -1,4 +1,5 @@
 import React from 'react'
+import cameraSliderGif from '/static/camera-slider.gif'
 import cameraInterfaceFront from '/static/camera-interface-front.jpg'
 import cameraInterfaceEdit from '/static/camera-interface-edit.jpg'
 import cameraInterfaceTimeline from '/static/camera-interface-timeline.jpg'
@@ -18,9 +19,11 @@ const CameraSlider = () => {
         <h1 className='project-header'>Making my Own Camera Slider</h1>
       </div>
       <div className='grid-item align-center'>
-        <video width = '400' autoPlay loop muted webkit-playsinline playsinline>
-            <source src={cameraSliderHeader} type='video/mp4'/>
-        </video>
+        <LazyLoadImage 
+          src={cameraSliderGif}
+          width = '400'
+          alt="Image Alt"
+        />
       </div>
       <div className='grid-item align-center'>
         <div className='project-text-container'>
@@ -34,7 +37,7 @@ const CameraSlider = () => {
         </div>
       </div>
       <div className='grid-item align-center'>
-        <video className='standard-img' autoPlay loop muted webkit-playsinline playsinline>
+        <video className='standard-img' loop muted webkit-playsinline playsinline controls controlsList='nodownload nofullscreen noplaybackrate' disablePictureInPicture>
             <source src={cameraSliderDemo} type='video/mp4'/>
         </video>
       </div>

@@ -39,7 +39,7 @@ const UrHrvrd = () => {
         </div>
       </div>
       <div className='grid-item align-center'>
-        <video className='standard-img' autoPlay loop muted webkit-playsinline playsinline>
+        <video className='standard-img' loop muted webkit-playsinline playsinline controls controlsList='nodownload nofullscreen noplaybackrate' disablePictureInPicture>
             <source src={scheduleVid} type='video/mp4'/>
         </video>
       </div>
@@ -64,7 +64,7 @@ const UrHrvrd = () => {
       </div>
 
       <div className='grid-item align-center'>
-        <video className='standard-img' autoPlay loop muted webkit-playsinline playsinline>
+        <video className='standard-img' loop muted webkit-playsinline playsinline controls controlsList='nodownload nofullscreen noplaybackrate' disablePictureInPicture>
             <source src={addingClassesVid} type='video/mp4'/>
         </video>
       </div>
@@ -86,7 +86,7 @@ const UrHrvrd = () => {
         </div>
       </div>
       <div className='grid-item align-center'>
-        <video className='standard-img' autoPlay loop muted webkit-playsinline playsinline>
+        <video className='standard-img' loop muted webkit-playsinline playsinline controls controlsList='nodownload nofullscreen noplaybackrate' disablePictureInPicture>
             <source src={labelVid} type='video/mp4'/>
         </video>
       </div>
