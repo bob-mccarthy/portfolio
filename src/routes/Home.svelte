@@ -4,6 +4,7 @@
     import backgroundVid from "../assets/bobby-pointing-phones.mp4"
     import phoneExhibitIcon from "../assets/phone-exhibit-icon.png";
     import cameraSliderIcon from "../assets/camera-slider-icon.png"
+    import { aspectRatio, screenWidth } from "../scripts/aspectRatio";
 
     const projects = [
         {
@@ -21,14 +22,13 @@
 
     ]
 </script>
-<main class="page-container">
+<main class="page-container" style="max-width: {$screenWidth}px;">
     <div class="container">
         <div class = "nav-background">
-            <video class= "vid" src = {backgroundVid} autoplay loop muted style="width: 100%; object-fit:cover">
+            <video class= "vid" src = {backgroundVid} playsinline autoplay loop muted style="width: 100%; object-fit:cover; transform: translate(0px, {Math.min(0,100*(1-$aspectRatio))}px)">
                 <track kind="captions" />
             </video>
         </div>
-        
         <div class = "text-background">
             
             <div class = "img-icon">
@@ -37,13 +37,12 @@
             <div class = "background-gradient">
 
             </div>
-            <p style="font-family: publicSansT; font-size: 72px; position: absolute; top: -130px; left: 200px" >
+            <p class = "pageTitle" style="" >
                 Bobby McCarthy
             </p>
-            <br>
-            <br>
-            <br>
-            <br>
+            <div style = "height: {10 * $aspectRatio + 50}px">
+
+            </div>
             <p style = "font-family: publicSansT; font-size: 24px"> About Me</p>
             <p style = "font-family: publicSans">
                 I'm Bobby McCarthy and I am a maker. I love just owning every aspect of the project from the mechanical to electrical to the programming
@@ -80,31 +79,67 @@
         --text-color: white;
     }
     p{
-        color: var(--text-color)
+        color: var(--text-color);
+        margin: 10px;
     }
-    @font-face{
-        font-family:publicSans;
-        src: url("../assets/public-sans/webfonts/PublicSans-Regular.woff")
+    .pageTitle{
+        font-family: publicSansT; 
+        font-size: 72px; 
+        position: absolute; 
+        top: -85px; 
+        left: 200px
     }
-    @font-face{
-        font-family:publicSansEB;
-        src: url("../assets/public-sans/webfonts/PublicSans-ExtraBold.woff")
-    }
-    @font-face{
-        font-family:publicSansB;
-        src: url("../assets/public-sans/webfonts/PublicSans-Bold.woff")
-    }
-    @font-face{
-        font-family:publicSansT;
-        src: url("../assets/public-sans/webfonts/PublicSans-Thin.woff")
-    }
-    .page-container{
-        width: 100vw;
-        height: 100vh;
-        display: flex;
+    .img-icon{
+        z-index: 99; 
+        position: absolute; 
+        top: -100px; 
+        left: 25px; 
+        width: 150px; 
+        height: 150px; 
+        border-radius: 50px; 
+        overflow: hidden;
         justify-content: center;
-        margin: -10px;
+        align-items: center;
     }
+    @media only screen and (max-width: 800px) {
+        .pageTitle {
+            font-size: 60px;
+            top: -75px; 
+        }
+    }
+    @media only screen and (max-width: 700px) {
+        .pageTitle {
+            font-size: 50px;
+            top: -65px; 
+        }
+    }
+    @media only screen and (max-width: 615px) {
+        .pageTitle {
+            font-size: 38px;
+            top: -65px; 
+            left: 165px;
+        }
+        .img-icon {
+            height: 125px;
+            width: 125px;
+            border-radius: 40px;
+            left: 15px;
+        }
+    }
+    @media only screen and (max-width: 500px) {
+        .pageTitle {
+            font-size: 25px;
+            top: -60px; 
+            left: 140px;
+        }
+        .img-icon {
+            height: 115px;
+            width: 115px;
+            border-radius: 35px;
+        }
+    }
+
+    
     .vid{
         -webkit-mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 85%);
         mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 85%);
@@ -135,27 +170,17 @@
         max-width: 1000px;
         width: 100%;
         position: relative;
+        
         /* background-color: blue; */
-        overflow: scroll;
     }
     .project-carousel{
         display: flex;
+        gap: 10px;
         overflow-x: scroll;
         overflow-y: hidden;
-        gap: 10px;
+        width: 100%;
     }
     
-    .img-icon{
-        z-index: 99; 
-        position: absolute; 
-        top: -100px; 
-        left: 25px; 
-        width: 150px; 
-        height: 150px; 
-        border-radius: 50px; 
-        overflow: hidden;
-        justify-content: center;
-        align-items: center;
-    }
+    
     
 </style>

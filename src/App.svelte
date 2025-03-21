@@ -14,10 +14,8 @@
     <Link to="/about">About</Link>
     <Link to="/phoneExhibit">Phone Exhibit</Link>
   </nav> -->
-  <div>
     <Route path="/phoneExhibit" component={PhoneExhibit} />
     <Route path="/cameraSlider" component={CameraSlider} />
     <Route path="/about" component={About} />
     <Route path="/"><Home /></Route>
-  </div>
 </Router>

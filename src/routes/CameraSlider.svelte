@@ -2,6 +2,8 @@
     import beltTensioner from "../assets/camera-slider/belt-tensioner-assembly.png"
     import cameraCart from "../assets/camera-slider/camera-cart.png"
     import stepperMotorAttachment from "../assets/camera-slider/stepper-motor-attachment.png"
+    import { screenWidth, aspectRatio } from "../scripts/aspectRatio";
+    import BackButton from "../components/BackButton.svelte";
     let code = `
 #ifndef MOTIONCONTROLLER_H
 #define MOTIONCONTROLLER_H
@@ -172,11 +174,15 @@ long MotionController::distanceToGo(uint8_t axisNum){
 }
     `
 </script>
-<main class="page-container">
-    <div class = "container">
-        <h1 class = "header">Camera Slider</h1>
+<main class="page-container" style="max-width:{$screenWidth}px;">
+    <div class = "container" style="margin-left: 10px; margin-right: 10px">
+        <div style="display: flex; gap: 10px; align-items: center">
+            <BackButton width = {"50px"} height= {"50px"}></BackButton>
+            <h1 class = "header">Camera Slider</h1>
+        </div>
+        
         <div style ="display:flex; justify-content:center">
-            <iframe title = "camera assembly" src="https://myfas117.autodesk360.com/shares/public/SH286ddQT78850c0d8a463d84ea23e23314f?mode=embed" width="50%" height="500px" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"  frameborder="0"></iframe>
+            <iframe title = "camera assembly" src="https://myfas117.autodesk360.com/shares/public/SH286ddQT78850c0d8a463d84ea23e23314f?mode=embed"  style = "aspect-ratio: {$aspectRatio}; min-width: min(75%, 400px);" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"  frameborder="0"></iframe>
         </div>
         
         <h2 class = "header">Problem Statement and Project Description</h2>
@@ -290,13 +296,6 @@ long MotionController::distanceToGo(uint8_t axisNum){
         position: relative;
         /* background-color: blue; */
         overflow: scroll;
-    }
-    .page-container{
-        width: 100vw;
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        margin: -10px;
     }
     p{
         font-family: "publicSans";
