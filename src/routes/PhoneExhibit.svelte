@@ -1,5 +1,6 @@
 <script lang="ts">
     import exhibitionBTS from "../assets/phone-exhibit/video-exhibition.mp4"
+    import phoneDemo from "../assets/phone-exhibit/phone-display.mp4"
     import diagramOne from "../assets/phone-exhibit/phone-measurement.png"
     import diagramTwo from "../assets/phone-exhibit/scale-factor-vid.png"
     import diagramThree from "../assets/phone-exhibit/vid-on-phones.png"
@@ -19,8 +20,11 @@
             <h1>Phone Video Display</h1>
         </div>
         
-        <div class = "img-container">
-            <video style="width: 20%" src = {exhibitionBTS} controls >
+        <div style="display: flex; margin:20px; justify-content:center; align-items:center; width:100%;">
+            <video style="min-width: 70%; " src = {phoneDemo} controls >
+                <track kind="captions" />
+            </video>
+            <video style="min-width: 19.9% !important; min-height: 100%; width: auto !important;" src = {exhibitionBTS} controls >
                 <track kind="captions" />
             </video>
         </div>
@@ -160,7 +164,7 @@
             there is a video across all of the phones, but we also want another video involving some text on just one of the tablets.
         </p>
         <div class = "img-container">
-            <video class= "vid" src = {diagramFour} autoplay loop muted playsinline >
+            <video class= "vid" style = "width: 50%" src = {diagramFour} autoplay loop muted playsinline >
                 <track kind="captions" />
             </video>
         </div>
@@ -176,7 +180,7 @@
             An example of when a device is not displaying a video is in diagram below, where some phones are displaying a video and some are not.
         </p>
         <div class = "img-container">
-            <video class= "vid" src = {diagramFive} autoplay loop muted playsinline >
+            <video class= "vid" style = "width: 50%" src = {diagramFive} autoplay loop muted playsinline >
                 <track kind="captions" />
             </video>
         </div>
@@ -342,7 +346,6 @@
         min-width: 300px;
     }
     video{
-        width: 50%;
         min-width: 300px;
     }
     /* @media only screen and (max-width: 400px) {

@@ -1,7 +1,7 @@
 <script lang="ts">
     import ProjectCard from "../components/ProjectCard.svelte";
     import portraitIcon from "../assets/bobby-portrait.jpg"
-    import backgroundVid from "../assets/bobby-pointing-phones.mp4"
+    import backgroundVid from "../assets/banner-vid.mp4"
     import phoneExhibitIcon from "../assets/phone-exhibit-icon.png";
     import cameraSliderIcon from "../assets/camera-slider-icon.png"
     import { aspectRatio, screenWidth } from "../scripts/aspectRatio";
@@ -24,10 +24,14 @@
 </script>
 <main class="page-container" style="max-width: {$screenWidth}px;">
     <div class="container">
+        
         <div class = "nav-background">
-            <video class= "vid" src = {backgroundVid} playsinline autoplay loop muted style="width: 100%; object-fit:cover; transform: translate(0px, {Math.min(0,100*(1-$aspectRatio))}px)">
-                <track kind="captions" />
-            </video>
+            <div style="position:relative;">
+                <div class="top-gradient"></div>
+                <video class= "vid" src = {backgroundVid} playsinline autoplay loop muted style="width: 100%; object-fit:cover; transform: translate(0px, {Math.min(0,100*(1-$aspectRatio))}px)">
+                    <track kind="captions" />
+                </video>
+            </div>
         </div>
         <div class = "text-background">
             
@@ -180,7 +184,18 @@
         overflow-y: hidden;
         width: 100%;
     }
-    
-    
+    .top-gradient{
+        z-index: 2;
+        position: absolute;
+        top:0;
+        left:0;
+        width: 100%;
+        height: 100px;
+        background: linear-gradient(to bottom, var(--main-color), rgba(255, 255, 255, 0));
+    }
+
+    video::-webkit-media-controls {
+        display:none !important;
+    }
     
 </style>
