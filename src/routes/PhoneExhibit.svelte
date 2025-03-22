@@ -23,10 +23,10 @@
             Exhibit Demo (left) and Behind the Scenes (right) Videos
         </p>
         <div style="display: flex; margin:20px; justify-content:center; align-items:center; max-width:100%;">
-            <video style="min-width: 70%; " src = {phoneDemo} controls >
+            <video style="min-width: 70%; " src = {phoneDemo} playsinline controls poster = "" >
                 <track kind="captions" />
             </video>
-            <video style="min-width: 19.9% !important; min-height: 100%; width: auto !important;" src = {exhibitionBTS} controls >
+            <video style="min-width: 19.9% !important; min-height: 100%; width: auto !important;" src = {exhibitionBTS} playsinline controls poster = "" >
                 <track kind="captions" />
             </video>
         </div>
