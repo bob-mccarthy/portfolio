@@ -19,8 +19,10 @@
             <BackButton width={"50px"} height= {"50px"}></BackButton>
             <h1>Phone Video Display</h1>
         </div>
-        
-        <div style="display: flex; margin:20px; justify-content:center; align-items:center; width:100%;">
+        <p>
+            Exhibit Demo (left) and Behind the Scenes (right) Videos
+        </p>
+        <div style="display: flex; margin:20px; justify-content:center; align-items:center; max-width:100%;">
             <video style="min-width: 70%; " src = {phoneDemo} controls >
                 <track kind="captions" />
             </video>
