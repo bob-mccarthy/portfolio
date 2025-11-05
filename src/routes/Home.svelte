@@ -1,9 +1,10 @@
 <script lang="ts">
     import ProjectCard from "../components/ProjectCard.svelte";
-    import portraitIcon from "../assets/bobby-portrait.jpg"
+    import portraitIcon from "../assets/bobby-portrait.png"
     import backgroundVid from "../assets/banner-vid.mp4"
     import phoneExhibitIcon from "../assets/phone-exhibit-icon.png";
     import cameraSliderIcon from "../assets/camera-slider-icon.png"
+    import pcbProcessingIcon from "../assets/pcb-processing-icon2.png"
     import { aspectRatio, screenWidth } from "../scripts/aspectRatio";
 
     const projects = [
@@ -18,6 +19,12 @@
             icon: cameraSliderIcon,
             desc: "Camera Slider and Custom Motion Control System",
             path: "/cameraSlider"
+        },
+        {
+            name: "Flip PCB",
+            icon: pcbProcessingIcon,
+            desc: "Software to Prepare Board Files for Double Sided PCB Milling",
+            path: "/flipPCB"
         }
 
     ]

@@ -13,6 +13,7 @@
     import { screenWidth, aspectRatio } from "../scripts/aspectRatio"
     import BackButton from "../components/BackButton.svelte"
 </script>
+
 <main class="page-container" style="max-width: {$screenWidth}px;">
     <div class = "container">
         <div style="display: flex; gap: 10px; align-items: center">
@@ -23,10 +24,10 @@
             Exhibit Demo (left) and Behind the Scenes (right) Videos
         </p>
         <div style="display: flex; margin:20px; justify-content:center; align-items:center; max-width:100%;">
-            <video style="min-width: 70%; " src = {phoneDemo} playsinline controls poster = "" >
+            <video style="min-width: 70%; " src = {phoneDemo} playsinline controls >
                 <track kind="captions" />
             </video>
-            <video style="min-width: 19.9% !important; min-height: 100%; width: auto !important;" src = {exhibitionBTS} playsinline controls poster = "" >
+            <video style="min-width: 19.9% !important; min-height: 100%; width: auto !important;" src = {exhibitionBTS} playsinline controls >
                 <track kind="captions" />
             </video>
         </div>
