@@ -2,6 +2,7 @@
     import ProjectCard from "../components/ProjectCard.svelte";
     import portraitIcon from "../assets/bobby-portrait.png"
     import backgroundVid from "../assets/banner-vid.mp4"
+    import bannerImg from "../assets/banner.jpg"
     import phoneExhibitIcon from "../assets/phone-exhibit-icon.png";
     import cameraSliderIcon from "../assets/camera-slider-icon.png"
     import pcbProcessingIcon from "../assets/pcb-processing-icon2.png"
@@ -31,13 +32,15 @@
 </script>
 <main class="page-container" style="max-width: {$screenWidth}px;">
     <div class="container">
-        
         <div class = "nav-background">
             <div style="position:relative;">
                 <div class="top-gradient"></div>
-                <video class= "vid" src = {backgroundVid} playsinline autoplay loop muted style="width: 100%; object-fit:cover; transform: translate(0px, {Math.min(0,100*(1-$aspectRatio))}px)">
+                <div class="left-right-gradient"></div>
+                <div class="right-left-gradient"></div>
+                <img style = "width: 100%; transform: translate(0px, {Math.min(0,100*(1-$aspectRatio))}px)" src = {bannerImg} alt = "banner img">
+                <!-- <video class= "vid" src = {backgroundVid} playsinline autoplay loop muted style="width: 100%; object-fit:cover; transform: translate(0px, {Math.min(0,100*(1-$aspectRatio))}px)">
                     <track kind="captions" />
-                </video>
+                </video> -->
             </div>
         </div>
         <div class = "text-background">
@@ -151,10 +154,10 @@
     }
 
     
-    .vid{
+    /* .vid{
         -webkit-mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 85%);
         mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 85%);
-    }
+    } */
     .nav-background{
         z-index: -2; 
         position: sticky; 
@@ -200,9 +203,27 @@
         height: 100px;
         background: linear-gradient(to bottom, var(--main-color), rgba(255, 255, 255, 0));
     }
-
-    video::-webkit-media-controls {
-        display:none !important;
+    .left-right-gradient{
+        z-index: 2;
+        position: absolute;
+        top:0;
+        left:0;
+        width: 100px;
+        height: 100%;
+        background: linear-gradient(to right, var(--main-color), rgba(255, 255, 255, 0));
     }
+    .right-left-gradient{
+        z-index: 2;
+        position: absolute;
+        top:0;
+        right:0;
+        width: 100px;
+        height: 100%;
+        background: linear-gradient(to left, var(--main-color), rgba(255, 255, 255, 0));
+    }
+
+    /* video::-webkit-media-controls {
+        display:none !important;
+    } */
     
 </style>

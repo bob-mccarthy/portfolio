@@ -189,9 +189,9 @@
         height: auto;
         background-color: blue;
     }
-    video{
+    /* video{
         min-width: 300px;
-    }
+    } */
     table {
         width: 75%;
     }
