@@ -5,10 +5,12 @@
   import PhoneExhibit from "./routes/PhoneExhibit.svelte";
   import CameraSlider from "./routes/CameraSlider.svelte";
   import FlipPCB from "./routes/FlipPCB.svelte";
+  import ElectronicPuzzle from "./routes/ElectronicPuzzle.svelte";
   export let url = "";
 </script>
 
 <Router {url}>
+  <Route path = "/electronicPuzzle" component = {ElectronicPuzzle}></Route>
     <Route path = "/flipPCB" component = {FlipPCB}></Route>
     <Route path="/phoneExhibit" component={PhoneExhibit} />
     <Route path="/cameraSlider" component={CameraSlider} />

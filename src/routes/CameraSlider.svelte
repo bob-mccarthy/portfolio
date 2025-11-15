@@ -4,175 +4,6 @@
     import stepperMotorAttachment from "../assets/camera-slider/stepper-motor-attachment.png"
     import { screenWidth, aspectRatio } from "../scripts/aspectRatio";
     import BackButton from "../components/BackButton.svelte";
-    let code = `
-#ifndef MOTIONCONTROLLER_H
-#define MOTIONCONTROLLER_H
-#include &lt;Arduino.h&gt;
-
-
-class MotionController{
-    public&#x3A;
-        /*
-            Motion Controller Constructor
-        */
-        MotionController(){}
-        /*
-            addAxis
-                allows a new axis of control and adds pins to connect to stepper motor
-                params:
-                    unitsToSteps: the conversions from what ever units the cart is moving in to stepper motor steps (ie millimeters to steps)
-                    dirPin: the pin that controls the direction of the motor
-                    stepPin: the pin that controls the stepping of the stepper motor
-                
-        */
-        void addAxis(double unitsToSteps, uint8_t dirPin, uint8_t stepPin );
-        /*
-            setSpeed
-                sets the speed for the for the given axis 
-                params:
-                    axisNum: the index of the axis
-                    speed: the speed of the axis in the units/s (with the units specified in the addAxis function)
-                
-        */
-        void setSpeed(uint8_t axisNum, double speed);
-
-        /*
-            setTargetPos
-                sets the target position for the for the given axis 
-                params:
-                    axisNum: the index of the axis
-                    position: the target position in the units specified in addAxis
-                
-        */
-        void setTargetPos(uint8_t axisNum, double position);
-
-        /*
-            getInterruptInterval
-                gets how quickly the interrupt should be triggered, but needs to be called after setting the speed
-                returns:
-                    how often the interrupt should be triggered in microseconds
-        */
-        unsigned long getInterruptInterval();
-
-        /*
-            runInterruptHandler
-                this runs in an interrupt with a resolution of 1Mhz and at the frequency specified by getInterruptInterval. This is run a step 
-                if a step is due, but needs to be in 
-        */
-        void runInterruptHandler();
-
-        /*
-            isMoving
-                returns how far the cart is from its target position
-                params:
-                    axisNum: the index of the axis
-                returns:
-                    returns a signed number of how far it from the cart (positive if the currPos is behind targetPos, and negative otherwise)
-
-        */
-        long distanceToGo(uint8_t axisNum);
-
-        
-    private:
-        /*  
-            calcNextStepTime:
-                takes in a position and axis and  calculates the time until the next step needs to be taken
-                params:
-                    axisNum: the index of the axis
-                    pos: position (in steps)
-                returns:
-                    returns the number of time until the next step in interrupt cycles
-        */
-        unsigned long calcNextStepTime(uint8_t axisNum, unsigned long pos);
-        //all the information to allow motion control along a new axis
-        struct axis{
-            double unitsToSteps; // conversion of whatever units are being used to steps
-            uint8_t dirPin; // dir pin of stepper motor (LOW is backward, HIGH is forward)
-            uint8_t stepPin; // step pin of stepper motor
-            unsigned long speed = 0; // speed of axis in (steps/sec)
-            unsigned long targetPos = 0; // target position of the camera (in steps)
-            unsigned long currPos = 0; // current position of the camera (in steps)
-        };
-
-        uint8_t numAxes = 0; //the number of axes being used 
-        axis axesArr[10];
-        unsigned long interruptInterval; 
-        unsigned long cyclesTilStep = 1; //the number of interrupt calls until the next step happens (1 mean that it with trigger on the next interrupt)
-        
-        
-
-    };
-    #endif`
-    let code2 = `
-#include "MotionController.h"
-#include <Arduino.h>
-
-void MotionController::addAxis(double unitsToSteps, uint8_t dirPin, uint8_t stepPin ){
-    axis a;
-    a.unitsToSteps = unitsToSteps;
-    a.dirPin = dirPin;
-    a.stepPin = stepPin;
-    pinMode(dirPin, OUTPUT);
-    pinMode(stepPin, OUTPUT);
-    this->axesArr[this->numAxes] = a;
-    this->numAxes++;
-}
-
-void MotionController::setSpeed(uint8_t axisNum, double speed){
-    this->axesArr[axisNum].speed = speed * this->axesArr[axisNum].unitsToSteps;
-
-    //recalculate the new interrupt interval now that a new speed has been set
-    unsigned long maxSpeed = 0;
-    for (int i = 0; i < numAxes; i++)
-    {
-        maxSpeed = max(this->axesArr[i].speed, maxSpeed);
-    }
-    // invert maxSpeed to get sec per step then multiply by 1,000,000 to get usec per step
-    this->interruptInterval = 1000000/maxSpeed;
-}
-
-void MotionController::setTargetPos(uint8_t axisNum, double targetPos){
-    this->axesArr[axisNum].targetPos = targetPos * this->axesArr[axisNum].unitsToSteps;
-}
-
-unsigned long MotionController::getInterruptInterval(){
-    return this->interruptInterval;
-}
-
-
-void MotionController::runInterruptHandler(){
-    for (int i = 0; i < this->numAxes; i++)
-    {
-        if (cyclesTilStep > 0)
-        {
-            cyclesTilStep--;
-        }
-        int8_t dir = this->axesArr[i].targetPos > this->axesArr[i].currPos ? 1: -1;
-        digitalWrite(this->axesArr[i].dirPin, dir == 1? HIGH: LOW);
-        if (this->axesArr[i].targetPos != this->axesArr[i].currPos && cyclesTilStep == 0)
-        {
-            digitalWrite(this->axesArr[i].stepPin, HIGH);
-            digitalWrite(this->axesArr[i].stepPin, LOW);
-            this->axesArr[i].currPos += dir;
-            this->cyclesTilStep = calcNextStepTime(i, this->axesArr[i].currPos);
-        }
-        
-    }
-    
-}
-
-unsigned long MotionController::calcNextStepTime(uint8_t axisNum, unsigned long pos){
-    if (pos == this->axesArr[axisNum].targetPos){
-        return 0;
-    }
-
-    return (100000 / this->axesArr[axisNum].currPos) / this->interruptInterval;
-}
-
-long MotionController::distanceToGo(uint8_t axisNum){
-    return this->axesArr[axisNum].targetPos - this->axesArr[axisNum].currPos;
-}
-    `
 </script>
 <main class="page-container" style="max-width:{$screenWidth}px;">
     <div class = "container" style="margin-left: 10px; margin-right: 10px">
@@ -241,31 +72,15 @@ long MotionController::distanceToGo(uint8_t axisNum){
         </p>
         <h3 class = "header"> Embedded Software </h3>
         <p style = "font-family: publicSans">
-            The Embedded Software is meant to take in instructions from the graphical interface and turn that it movements for its stepper motors. So while for 
-            this MVP there is only once axis of motion, the structure of the code is made to accomodate as many axes as you need in the MotionController class.
-            In this class it allows you to setup a new axis of motion by specifying a conversion from what ever units you want to use into steps as well as a step
-            and a direction pin for the stepper motor. While eventually to have perfect control of the speed, for this MVP I just wanted to get accurate control of 
-            the camera's position. So the basics of how this works in the code below is you can set the camera's position in millimeters and it will move to that 
-            position in whatever speed you had set in mm/s. 
+            This is the next major step for the project, I want to be able to control this project with keyframes like I would in my editing softwares. For 
+            those unfamiliar with keyframes it is just a concept where you define the state of an object at a certain moment in time (like it's position or rotation),
+            and then it determines the interpolation for you. So this kind of functionality is different from traditional stepper motors from traditional cnc firmware
+            which takes in max acceleration and velocity parameters and takes in a set of points and tries to move the robot as fast a possible. As I do not necessarily
+            want the fastest speeds everytime I just want the timings to be accurate. I also do not like the current popular stepper motor libraries. So I have reading through
+            githubs of libraries like FluidNC to see how they control they stepper motors to see what I can take from them. As of right now the answer is really fast timer interrupts 
+            and then offloading stepping to any other peripherals on the chip. In my case I am using the esp32 and I want to incorporate the rmt peripherial
         </p>
-        <div style="display:flex; justify-content:center; gap: 20px">
-            <pre style="width: 30%; height: 500px; overflow:scroll; border-color:white; border-style:solid">
-                <code>
-                    {@html code}
-                </code>
-            </pre>
-            <pre style="width: 30%; height: 500px; overflow:scroll; border-color:white; border-style:solid">
-                <code>
-                    {@html code2}
-                </code>
-            </pre>
-        </div>
         
-        <h2 class="header">Next Steps</h2>
-        <p>
-            The next steps are to implement the proper speed acceleration, which involves both programming an interface that has bezier curves for speed controls 
-            and just basic keyframes. After that it is finished the plan to get the pan and tilt camera head on it.
-        </p>
     </div>
 
     

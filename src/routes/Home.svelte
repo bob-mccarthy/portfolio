@@ -6,6 +6,7 @@
     import phoneExhibitIcon from "../assets/phone-exhibit-icon.png";
     import cameraSliderIcon from "../assets/camera-slider-icon.png"
     import pcbProcessingIcon from "../assets/pcb-processing-icon2.png"
+    import electronicPuzzleIcon from "../assets/electronic-puzzle-icon.png"
     import { aspectRatio, screenWidth } from "../scripts/aspectRatio";
 
     const projects = [
@@ -14,6 +15,12 @@
             icon: phoneExhibitIcon,
             desc: "Synchronized Video Screen Made of 70+ phones displayed at the World Bank ",
             path: "/phoneExhibit"
+        },
+        {
+            name: "Electronic Puzzle",
+            icon: electronicPuzzleIcon,
+            desc: "A puzzle that knows when it's solves and scrambles itself",
+            path: "/electronicPuzzle"
         },
         {
             name: "Camera Slider",
