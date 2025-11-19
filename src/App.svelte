@@ -10,10 +10,10 @@
 </script>
 
 <Router {url}>
-  <Route path = "/electronicPuzzle" component = {ElectronicPuzzle}></Route>
-    <Route path = "/flipPCB" component = {FlipPCB}></Route>
-    <Route path="/phoneExhibit" component={PhoneExhibit} />
-    <Route path="/cameraSlider" component={CameraSlider} />
-    <Route path="/about" component={About} />
+    <Route path="/electronicPuzzle"><ElectronicPuzzle /></Route>
+    <Route path="/flipPCB"><FlipPCB /></Route>
+    <Route path="/phoneExhibit"><PhoneExhibit /></Route>
+    <Route path="/cameraSlider"><CameraSlider /></Route>
+    <Route path="/about"><About /></Route>
     <Route path="/"><Home /></Route>
 </Router>

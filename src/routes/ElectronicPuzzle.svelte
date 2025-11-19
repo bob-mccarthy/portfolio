@@ -64,11 +64,7 @@
         --main-color: #212121; 
         --text-color: white;
     }
-    th,td{
-        justify-content: center;
-        align-items: center;
-    }
-    h1,h2,h3,h4{
+    h1,h2{
         font-family: publicSansT;
     }
     .container{
@@ -86,37 +82,7 @@
     p{
         font-family: publicSans;
     }
-    .center-container{
-        display: flex;
-        width: 100%;
-        justify-content: center;
-        align-content: center;
-    }
-    img{
-        width: 50%;
-        min-width: 300px;
-    }
-
-    .table-img {
-        display: block; /* prevents baseline alignment weirdness */
-        margin: 0 auto; /* centers the image horizontally */
-        max-width: 100%;
-        height: auto;
-        background-color: blue;
-    }
-    /* video{
-        min-width: 300px;
-    } */
-    table {
-        width: 75%;
-    }
-    a {
-        color: white;
-    }
-    a:visited {
-        color: white;
-
-    }
+  
     /* @media only screen and (max-width: 400px) {
         img{
             width: 100%;

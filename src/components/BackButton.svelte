@@ -1,6 +1,7 @@
 <script>
     import { Link } from "svelte-routing";
-    let {width, height} = $props()
+    export let width;
+    export let height;
 </script>
 
 <Link to="/" style = " text-decoration: none; color: white">
