@@ -23,8 +23,17 @@
         <h2> 
             Demo
         </h2>
-        <video style="max-width: 70%; " src = {puzzleDemo} playsinline controls >
+        <!-- <video style="max-width: 70%; " src = {puzzleDemo} playsinline controls >
                 <track kind="captions" />
+        </video> -->
+        <video
+            style="max-width: 70%;"
+            playsinline
+            controls
+        >
+            <source src="{puzzleDemo}" type="video/mp4" />
+            <track kind="captions" />
+            Your browser does not support the video tag.
         </video>
 
         <h2>
