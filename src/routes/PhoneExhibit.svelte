@@ -24,10 +24,13 @@
             Exhibit Demo (left) and Behind the Scenes (right) Videos
         </p>
         <div style="display: flex; margin:20px; justify-content:center; align-items:center; max-width:100%;">
-            <video style="min-width: 70%; " src = {phoneDemo} playsinline controls >
+            <video style="min-width: 70%;" playsinline controls>
+                <source src="{phoneDemo}" type="video/mp4" />
                 <track kind="captions" />
             </video>
-            <video style="min-width: 19.9% !important; min-height: 100%; width: auto !important;" src = {exhibitionBTS} playsinline controls >
+
+            <video style="min-width: 19.9% !important; min-height: 100%; width: auto !important;" playsinline controls>
+                <source src="{exhibitionBTS}" type="video/mp4" />
                 <track kind="captions" />
             </video>
         </div>
@@ -166,8 +169,9 @@
             might be videos that are overlapping or just blank space where there are no videos at all. An example of the overlapping case is in the diagram below, where 
             there is a video across all of the phones, but we also want another video involving some text on just one of the tablets.
         </p>
-        <div class = "img-container">
-            <video class= "vid" style = "width: 50%" src = {diagramFour} autoplay loop muted playsinline >
+        <div class="img-container">
+            <video class="vid" style="width: 50%" autoplay loop muted playsinline>
+                <source src="{diagramFour}" type="video/mp4" />
                 <track kind="captions" />
             </video>
         </div>
@@ -182,8 +186,9 @@
         <p>
             An example of when a device is not displaying a video is in diagram below, where some phones are displaying a video and some are not.
         </p>
-        <div class = "img-container">
-            <video class= "vid" style = "width: 50%" src = {diagramFive} autoplay loop muted playsinline >
+        <div class="img-container">
+            <video class="vid" style="width: 50%" autoplay loop muted playsinline>
+                <source src="{diagramFive}" type="video/mp4" />
                 <track kind="captions" />
             </video>
         </div>
@@ -257,8 +262,9 @@
                     phone to download its video. Once all the phones have downloaded their videos the web server sends the refresh message to all of the phones.  (We need the phones to 
                     download the videos one at a time because it is too much strain on the web server to try and download 70 videos at the same time)
                 </p>
-                <div class = "img-container">
-                    <video style="width: 33%" src = {diagramSeven} autoplay loop muted playsinline >
+                <div class="img-container">
+                    <video style="width: 33%" autoplay loop muted playsinline>
+                        <source src="{diagramSeven}" type="video/mp4" />
                         <track kind="captions" />
                     </video>
                 </div>
