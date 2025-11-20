@@ -78,10 +78,12 @@
                     
                 </div>
             </div>
-            <p style = "font-family: publicSansT; font-size: 24px"> Connect</p>
+            <!-- <p style = "font-family: publicSansT; font-size: 24px"> Connect</p> -->
+            <p style = "font-family: publicSansT; font-size: 24px" >
+                Connect : <a href = "https://www.linkedin.com/in/robert-mccarthy-597b371a3/" > LinkedIn</a>
+            </p>
             <p style = "font-family: publicSans">
-                I'm Bobby McCarthy and I am a maker. I love just owning every aspect of the project from the mechanical to electrical to the programming
-                to the filmmaking and presentation of the things that I make. 
+                
             </p>
             <br>
             <br>
@@ -228,7 +230,13 @@
         height: 100%;
         background: linear-gradient(to left, var(--main-color), rgba(255, 255, 255, 0));
     }
+    a {
+        color: white;
+    }
+    a:visited {
+        color: white;
 
+    }
     /* video::-webkit-media-controls {
         display:none !important;
     } */
