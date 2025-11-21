@@ -78,7 +78,8 @@
             which takes in max acceleration and velocity parameters and takes in a set of points and tries to move the robot as fast a possible. As I do not necessarily
             want the fastest speeds everytime I just want the timings to be accurate. I also do not like the current popular stepper motor libraries. So I have reading through
             githubs of libraries like FluidNC to see how they control they stepper motors to see what I can take from them. As of right now the answer is really fast timer interrupts 
-            and then offloading stepping to any other peripherals on the chip. In my case I am using the esp32 and I want to incorporate the rmt peripherial to offload
+            and then offloading stepping to any other peripherals on the chip. In my case I am using the esp32 and I want to incorporate the rmt peripherial to offload generating the 
+            steps from the cpu. 
         </p>
         
     </div>

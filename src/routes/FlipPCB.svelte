@@ -24,7 +24,7 @@
         </h2>
         <p>
             I mill alot of circuit boards when I am rapidly prototyping the projects I work on.
-            A lot of times I needs boards that have two sides two them. However, the simplest way
+            A lot of times I need boards that have two sides to them. However, the simplest way
             I have to do this that I have found is <a href = "https://sibusaman.fabcloud.io/doublepcb/">this method</a>.
             However, this requires manually modifying the board files in an image editor which is time consuming and
             prone to error. So flip pcb takes in the pngs which represents the front and back traces of the board as well
