@@ -7,15 +7,17 @@
     import frontOutline from "../assets/pcb-processing/front-outline.png"
     import gui from "../assets/pcb-processing/gui.jpg"
     import BackButton from "../components/BackButton.svelte"
+    import { screenWidth, aspectRatio } from "../scripts/aspectRatio";
 </script>
-<main>
-    <div class = "container">
+
+<main class="page-container" style="max-width:{$screenWidth}px;">
+    <div class = "container" style="margin-left: 10px; margin-right: 10px">
         <div style="display: flex; gap: 10px; align-items: center">
             <BackButton width = {"50px"} height= {"50px"}></BackButton>
             <h1 class = "header">Flip PCB</h1>
         </div>
         <div class = "center-container">
-            <img src={gui} alt= "flip-pcb-gui">
+            <img style = "width: 60%;" src={gui} alt= "flip-pcb-gui">
         </div>
         <h2>
             What is the purpose?
@@ -177,9 +179,10 @@
         justify-content: center;
         align-content: center;
     }
+
     img{
-        width: 50%;
-        min-width: 300px;
+        width: 100%;
+        /* min-width: 300px; */
     }
 
     .table-img {

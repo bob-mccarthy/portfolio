@@ -1,7 +1,6 @@
 <script lang="ts">
     import ProjectCard from "../components/ProjectCard.svelte";
     import portraitIcon from "../assets/bobby-portrait.png"
-    import backgroundVid from "../assets/banner-vid.mp4"
     import bannerImg from "../assets/banner.jpg"
     import phoneExhibitIcon from "../assets/phone-exhibit-icon.png";
     import cameraSliderIcon from "../assets/camera-slider-icon.png"
@@ -37,10 +36,10 @@
 
     ]
 </script>
-<main class="page-container" style="max-width: {$screenWidth}px;">
+<main style="max-width: {$screenWidth}px;">
     <div class="container">
         <div class = "nav-background">
-            <div style="position:relative;">
+            <div style="position:relative; overflow:hidden">
                 <div class="top-gradient"></div>
                 <div class="left-right-gradient"></div>
                 <div class="right-left-gradient"></div>
@@ -193,8 +192,6 @@
         max-width: 1000px;
         width: 100%;
         position: relative;
-        
-        /* background-color: blue; */
     }
     .project-carousel{
         display: flex;

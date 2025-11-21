@@ -5,7 +5,7 @@
     import { screenWidth, aspectRatio } from "../scripts/aspectRatio";
     import BackButton from "../components/BackButton.svelte";
 </script>
-<main class="page-container" style="max-width:{$screenWidth}px;">
+<main class = "page-container" style="max-width:{$screenWidth}px;">
     <div class = "container" style="margin-left: 10px; margin-right: 10px">
         <div style="display: flex; gap: 10px; align-items: center">
             <BackButton width = {"50px"} height= {"50px"}></BackButton>
@@ -78,7 +78,7 @@
             which takes in max acceleration and velocity parameters and takes in a set of points and tries to move the robot as fast a possible. As I do not necessarily
             want the fastest speeds everytime I just want the timings to be accurate. I also do not like the current popular stepper motor libraries. So I have reading through
             githubs of libraries like FluidNC to see how they control they stepper motors to see what I can take from them. As of right now the answer is really fast timer interrupts 
-            and then offloading stepping to any other peripherals on the chip. In my case I am using the esp32 and I want to incorporate the rmt peripherial
+            and then offloading stepping to any other peripherals on the chip. In my case I am using the esp32 and I want to incorporate the rmt peripherial to offload
         </p>
         
     </div>
